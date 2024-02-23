@@ -21,7 +21,6 @@
     "license": "gulp checkLicenses",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "postinstall": "npm run boot",
     "test": "lerna run test",
     "publish:prepare": "gulp prepareForPublish",
     "publish:manual": "gulp publishManual",
