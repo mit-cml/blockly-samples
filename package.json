@@ -1,5 +1,6 @@
 {
   "name": "blockly-samples",
+  "workspaces": ["plugins/dev-scripts"],
   "version": "0.0.0",
   "description": "Samples for using Blockly",
   "author": "Blockly Team",
