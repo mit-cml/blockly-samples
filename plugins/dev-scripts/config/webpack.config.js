@@ -30,12 +30,15 @@ module.exports = (env) => {
   let target = 'web';
   if (isProduction) {
     // Production.
-    ['js', 'ts']
-      .filter((ext) => fs.existsSync(resolveApp(`./src/index.${ext}`)))
-      .forEach((ext) => {
-        entry = `./src/index.${ext}`;
+    entry = {};
+    ['core', 'blocks', 'generators', 'index'].forEach((entryPoint) => {
+      ['js', 'ts'].filter((ext) =>
+          fs.existsSync(resolveApp(`./src/${entryPoint}.${ext}`))
+      ).forEach((ext) => {
+        entry[entryPoint] = `./src/${entryPoint}.${ext}`;
       });
-    outputFile = 'index.js';
+    });
+    outputFile = '[name].js';
   } else if (isDevelopment) {
     // Development.
     ['js', 'ts']
@@ -69,6 +72,7 @@ module.exports = (env) => {
   }
 
   return {
+    // optimization: env.optimization || {},
     target,
     mode: isProduction ? 'production' : 'development',
     entry: entry,

@@ -1,3 +1,6 @@
+### This is a modified copy of the @blockly/dev-scripts package.
+### The following is the original README text:
+
 # @blockly/dev-scripts [![Built on Blockly](https://tinyurl.com/built-on-blockly)](https://github.com/google/blockly)
 
 This package includes scripts and configuration files used by Blockly plugins.

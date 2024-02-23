@@ -32,6 +32,11 @@ console.log(`Running production build for ${packageJson.name}`);
 // Create the webpack configuration for based on the build environment.
 const config = webpackConfig({
   mode: 'production',
+  // TODO: Maybe I should just use developer builds instead of turning off optimization here.
+  optimization: {
+    minimize: false,
+    mangleExports: false,
+  }
 });
 if (!config.entry) {
   console.log(`${chalk.red(`Configuration error.`)}
